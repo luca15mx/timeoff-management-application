@@ -3,10 +3,15 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
+      - Actualizando la instancia
+      - sudo apt-get update -y
+      - echo Instalando AWS CLI
+      - sudo apt-get install awscli -y
       - aws --version
-      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=012345678910.dkr.ecr.us-east-1.amazonaws.com/base-image
+      - docker -v
+      - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --region us-east-1 --no-include-email)
+      - REPOSITORY_URI=042112416138.dkr.ecr.us-east-1.amazonaws.com/timeoff:latest
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
