@@ -6,19 +6,19 @@ locals {
   private_db_subnet_cidr_blocks = ["${var.vpc_cidr_block_prefix_code}.0.7.0/24", "${var.vpc_cidr_block_prefix_code}.0.8.0/24"]
 
   default_ingress_blocks = [
-    {
-      cidr_blocks = [
-        "0.0.0.0/0"
-      ]
-      description      = "all-traffic"
-      from_port        = -1
-      ipv6_cidr_blocks = []
-      prefix_list_ids  = []
-      protocol         = "tcp"
-      security_groups  = []
-      self             = false
-      to_port          = -1
-    },
+    # {
+    #   cidr_blocks = [
+    #     "0.0.0.0/0"
+    #   ]
+    #   description      = "all-traffic"
+    #   from_port        = -1
+    #   ipv6_cidr_blocks = []
+    #   prefix_list_ids  = []
+    #   protocol         = "tcp"
+    #   security_groups  = []
+    #   self             = false
+    #   to_port          = -1
+    # },
     {
       cidr_blocks = [
         "0.0.0.0/0"

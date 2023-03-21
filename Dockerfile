@@ -26,7 +26,7 @@ COPY package.json  .
 
 RUN npm install --verbose
 
-FROM alpine:latest
+FROM 042112416138.dkr.ecr.us-east-1.amazonaws.com/base-images:latest
 
 LABEL org.label-schema.schema-version="1.0"
 LABEL org.label-schema.docker.cmd="docker run -d -p 3000:3000 --name alpine_timeoff"
