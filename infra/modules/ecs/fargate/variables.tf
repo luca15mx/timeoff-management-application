@@ -24,7 +24,7 @@ variable "app_count" {
 }
 
 variable "health_check_path" {
-  default = "/"
+  default = "/login"
 }
 
 variable "fargate_cpu" {
