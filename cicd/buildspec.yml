@@ -4,9 +4,6 @@ phases:
   pre_build:
     commands:
       - echo *********** Versiones ***********
-      # - sudo apt-get update -y
-      # - echo Instalando AWS CLI
-      # - sudo apt-get install awscli -y
       - aws --version
       - docker -v
       - echo *********** Logging in to Amazon ECR... ***********
@@ -26,4 +23,7 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - echo ++++++++++++ Actualizando el Servicio en Fargate +++++++++++++++
+      - aws ecs update-service --desired-count 0 --cluster "development-gorila" --service "time-off-srv"
+      - aws ecs update-service --desired-count 2 --cluster "development-gorila" --service "time-off-srv"
       
