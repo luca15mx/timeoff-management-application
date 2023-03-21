@@ -14,7 +14,7 @@
 # 4. Login to running container (to update config (vi config/app.json): 
 #	docker exec -ti --user root alpine_timeoff /bin/sh
 # --------------------------------------------------------------------
-FROM python:2.7-alpine as dependencies
+FROM 042112416138.dkr.ecr.us-east-1.amazonaws.com/cidi:latest as dependencies
 
 RUN apk add --no-cache \
     nodejs npm 

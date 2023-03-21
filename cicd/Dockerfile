@@ -1,4 +1,4 @@
-FROM 042112416138.dkr.ecr.us-east-1.amazonaws.com/cidi:latest as dependencies
+FROM python:2.7-alpine as dependencies
 
 RUN apk add --no-cache \
     nodejs npm 
