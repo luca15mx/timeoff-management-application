@@ -11,7 +11,7 @@ phases:
       - docker -v
       - echo *********** Logging in to Amazon ECR... ***********
       - $(aws ecr get-login --region us-east-1 --no-include-email)
-      - REPOSITORY_URI=042112416138.dkr.ecr.us-east-1.amazonaws.com/timeoff:latest
+      - REPOSITORY_URI=042112416138.dkr.ecr.us-east-1.amazonaws.com/timeoff
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
