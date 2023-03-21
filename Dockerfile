@@ -39,7 +39,8 @@ RUN apk add --no-cache \
 RUN adduser --system app --home /app
 USER app
 WORKDIR /app
-COPY --chown=app:app . /app
+# COPY --chown=app:app . /app
+COPY . /app
 COPY --from=dependencies node_modules ./node_modules
 
 
