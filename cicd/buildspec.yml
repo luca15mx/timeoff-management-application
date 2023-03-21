@@ -3,7 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - Actualizando la instancia
+      - echo Actualizando la instancia
       - sudo apt-get update -y
       - echo Instalando AWS CLI
       - sudo apt-get install awscli -y
